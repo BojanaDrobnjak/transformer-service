@@ -18,16 +18,43 @@ The **Transformer Service** is a RESTful API built with **Spring Boot** that app
 
 2. **Build the project**:
     ```bash
-    ./mvnw clean install
+    mvn clean install
     ```
 
 3. **Run the application**:
     ```bash
-    ./mvnw spring-boot:run
+    mvn spring-boot:run
     ```
 
 4. The API will be available at `http://localhost:8080/api/transform`.
 
+
+## Docker Setup
+
+To containerize and run the application using Docker:
+
+First, package the application using Maven:
+
+```bash
+mvn clean package
+```
+
+Then, build the Docker image and run the container:
+
+```bash
+docker build -t transformer-service .
+```
+
+Run the Docker container:
+```bash
+docker run -p 8080:8080 transformer-service
+```
+
+Using Docker Compose:
+
+```bash
+docker-compose up --build
+```
 
 ## API Usage
 
@@ -76,10 +103,21 @@ The response body will be a JSON object with the following structure:
 }
 ```
 
+## Swagger API Documentation
+
+The Transformer Service exposes RESTful APIs, which are documented using **Swagger**.
+
+After running the project, you can access the Swagger UI to view and interact with the APIs.
+
+### URL:
+`http://localhost:8080/swagger-ui.html`
+
+The Swagger UI provides a visual interface for the API, including available endpoints, request/response formats, and status codes.
+
 ## Testing
 
 The project includes unit tests for the transformer service. To run the tests, execute the following command:
 
 ```bash
-./mvnw test
+mvn test
 ```
