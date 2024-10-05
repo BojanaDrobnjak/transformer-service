@@ -44,4 +44,20 @@ public class GlobalExceptionHandler {
                 "Resource not found: " + ex.getMessage(), HttpStatus.NOT_FOUND
         );
     }
+
+    /**
+     * Handle an illegal argument exception.
+     *
+     * @param ex      The exception that was thrown.
+     * @param request The web request.
+     * @return A response entity with an error message and status code.
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(
+            final IllegalArgumentException ex, final WebRequest request
+    ) {
+        return new ResponseEntity<>(
+                "Invalid argument: " + ex.getMessage(), HttpStatus.BAD_REQUEST
+        );
+    }
 }

@@ -4,6 +4,7 @@ import com.incode.transformer_service.dto.TransformerRequest;
 import com.incode.transformer_service.dto.TransformerResponse;
 import com.incode.transformer_service.service.TransformerService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import jakarta.validation.Valid;
 /**
  * Controller for handling transformation requests.
  */
+@Tag(name = "Transformers", description = "API for applying transformations to a string")
 @RestController
 @RequestMapping("/transform")
 public class TransformerController {

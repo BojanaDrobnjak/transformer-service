@@ -29,6 +29,13 @@ public final class RegexRemovalTransformer implements Transformer {
     public String transform(final String value,
                             final TransformerDto transformerDto) {
         String regex = transformerDto.getParameters().get("regex");
+
+        // Check if regex is null or empty
+        if (regex == null || regex.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "Regex parameter is missing or empty.");
+        }
+
         return value.replaceAll(regex, "");
     }
 

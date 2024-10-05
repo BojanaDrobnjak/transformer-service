@@ -30,6 +30,19 @@ public final class RegexReplaceTransformer implements Transformer {
                             final TransformerDto transformerDto) {
         String regex = transformerDto.getParameters().get("regex");
         String replacement = transformerDto.getParameters().get("replacement");
+
+        // Check for null or empty regex and replacement
+        if (regex == null || regex.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "The 'regex' parameter is required "
+                            + "and cannot be null or empty.");
+        }
+        if (replacement == null) {
+            throw new IllegalArgumentException(
+                    "The 'replacement' parameter is required "
+                            + "and cannot be null.");
+        }
+
         return value.replaceAll(regex, replacement);
     }
 
