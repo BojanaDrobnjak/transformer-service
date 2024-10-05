@@ -77,7 +77,7 @@ The request body should be a JSON object with the following structure:
         }
     },
     {
-        "groupId": 2,
+        "groupId": 1,
         "transformerId": 2,
         "parameters": {
             "regex": "regex pattern",
@@ -85,8 +85,8 @@ The request body should be a JSON object with the following structure:
         }
     },
     {
-        "groupId": 3,
-        "transformerId": 3
+        "groupId": 2,
+        "transformerId": 1
     }
   ]
 }
@@ -110,7 +110,7 @@ The Transformer Service exposes RESTful APIs, which are documented using **Swagg
 After running the project, you can access the Swagger UI to view and interact with the APIs.
 
 ### URL:
-`http://localhost:8080/swagger-ui.html`
+`http://localhost:8080/api/swagger-ui/index.html`
 
 The Swagger UI provides a visual interface for the API, including available endpoints, request/response formats, and status codes.
 
