@@ -12,6 +12,7 @@ import jakarta.annotation.PostConstruct;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.incode.transformer_service.service.TransformerGroup.CHARACTER_CONVERSION;
@@ -26,6 +27,17 @@ public final class CyrillicToLatinTransformer implements Transformer {
      * The unique ID of this transformer.
      */
     private static final Long ID = 1L;
+
+    /**
+     * The name of the transformer.
+     */
+    private static final String NAME = "Cyrillic to Latin Transformer";
+
+    /**
+     * The description of the transformer.
+     */
+    private static final String
+            DESCRIPTION = "Converts Cyrillic characters to Latin equivalents.";
 
     /**
      * ResourceLoader to load external resources.
@@ -112,5 +124,35 @@ public final class CyrillicToLatinTransformer implements Transformer {
     @Override
     public Long getGroupId() {
         return CHARACTER_CONVERSION.getId();
+    }
+
+    /**
+     * Returns the name of the transformer.
+     *
+     * @return The transformer name.
+     */
+    @Override
+    public String getName() {
+        return NAME;
+    }
+
+    /**
+     * Returns the description of the transformer.
+     *
+     * @return The transformer description.
+     */
+    @Override
+    public String getDescription() {
+        return DESCRIPTION;
+    }
+
+    /**
+     * Returns the parameters of the transformer.
+     *
+     * @return The transformer parameters.
+     */
+    @Override
+    public List<ParameterDefinition> getParameters() {
+        return List.of();
     }
 }

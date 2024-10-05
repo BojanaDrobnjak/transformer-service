@@ -1,6 +1,9 @@
 package com.incode.transformer_service.service;
 
 import com.incode.transformer_service.dto.TransformerDto;
+import com.incode.transformer_service.transformer.ParameterDefinition;
+
+import java.util.List;
 
 /**
  * Interface representing a transformer that applies transformations
@@ -30,4 +33,25 @@ public interface Transformer {
      * @return The group ID.
      */
     Long getGroupId();
+
+    /**
+     * Returns the name of the transformer.
+     *
+     * @return The transformer name.
+     */
+    String getName();
+
+    /**
+     * Returns the description of the transformer.
+     *
+     * @return The transformer description.
+     */
+    String getDescription();
+
+    /**
+     * Returns the parameters of the transformer.
+     *
+     * @return The transformer parameters.
+     */
+    List<ParameterDefinition> getParameters();
 }

@@ -10,6 +10,10 @@
  *   - Response DTO for transformed values.</li>
  *   <li>{@link com.incode.transformer_service.dto.TransformerDto}
  *   - DTO representing individual transformers.</li>
+ *   <li>{@link com.incode.transformer_service.dto.TransformerGroupDto}
+ *   - DTO representing groups of transformers.</li>
+ *   <li>{@link com.incode.transformer_service.dto.TransformerInfoDto}
+ *   - DTO representing transformer information.</li>
  * </ul>
  */
 package com.incode.transformer_service.dto;

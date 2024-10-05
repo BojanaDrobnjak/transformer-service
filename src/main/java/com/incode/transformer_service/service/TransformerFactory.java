@@ -1,10 +1,12 @@
 package com.incode.transformer_service.service;
 
+import lombok.Getter;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Getter
 @Component
 public class TransformerFactory {
 
@@ -38,4 +40,5 @@ public class TransformerFactory {
                                 equals(transformerId))
                 .findFirst();
     }
+
 }
