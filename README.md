@@ -59,7 +59,50 @@ docker-compose up --build
 ## API Usage
 
 ### Endpoint
-`POST /api/transform`
+`GET /api/transformers/groups`
+
+This endpoint retrieves all transformer groups, along with the transformers within each group. Each transformer group will include its group ID, group name, description, and a list of transformers.
+
+### Response Body
+
+The response body will be a JSON object with the following structure:
+
+```json
+[
+   {
+      "groupId": 1,
+      "groupName": "TEXT_MANIPULATION",
+      "groupDescription": "Transformers related to text manipulation",
+      "transformers": [
+         {
+            "transformerId": 1,
+            "name": "Regex Removal Transformer",
+            "description": "Removes text based on a regular expression."
+         },
+         {
+            "transformerId": 2,
+            "name": "Regex Replace Transformer",
+            "description": "Replaces text based on a regular expression."
+         }
+      ]
+   },
+   {
+      "groupId": 2,
+      "groupName": "CHARACTER_CONVERSION",
+      "groupDescription": "Transformers related to character conversion",
+      "transformers": [
+         {
+            "transformerId": 1,
+            "name": "Cyrillic to Latin Transformer",
+            "description": "Converts Cyrillic characters to their Latin equivalents."
+         }
+      ]
+   }
+]
+```
+
+### Endpoint
+`POST /api/transformers/apply`
 
 ### Request Body
 

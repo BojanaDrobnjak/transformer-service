@@ -43,7 +43,7 @@ class TransformerControllerIntegrationTests {
                 .build();
 
         // Act & Assert
-        mockMvc.perform(MockMvcRequestBuilders.post("/transform")
+        mockMvc.perform(MockMvcRequestBuilders.post("/transformers/apply")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())

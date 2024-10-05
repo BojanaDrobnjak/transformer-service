@@ -25,7 +25,7 @@ import java.util.List;
         description = "API for applying transformations to a string"
 )
 @RestController
-@RequestMapping("/transform")
+@RequestMapping("/transformers")
 public class TransformerController {
 
     /**
@@ -51,7 +51,7 @@ public class TransformerController {
      * @return ResponseEntity containing the original and transformed string.
      */
     @Operation(summary = "Transform a string based on a list of transformers")
-    @PostMapping
+    @PostMapping("/apply")
     public ResponseEntity<TransformerResponse> transform(
             @Valid @RequestBody final TransformerRequest request
     ) {
